@@ -9,13 +9,13 @@ class CatagoryCard extends StatelessWidget {
 
   final String svgSrc;
   final String title;
-  final Function press;
+  final VoidCallback onPressed;
 
   const CatagoryCard({
     super.key, 
     required this.svgSrc, 
     required this.title, 
-    required this.press,
+    required this.onPressed,
   });
 
   @override
@@ -23,10 +23,9 @@ class CatagoryCard extends StatelessWidget {
     return ClipRRect(
       borderRadius: BorderRadius.circular(13),
       child: Container(
-        // padding: EdgeInsets.all(20.0),
         decoration: BoxDecoration(
           color: Colors.white,
-          borderRadius: BorderRadius.circular(13),
+          borderRadius: BorderRadius.circular(13), 
           boxShadow: [
               BoxShadow(
               offset: Offset(0, 17),
@@ -39,7 +38,7 @@ class CatagoryCard extends StatelessWidget {
         child: Material(
           color: Colors.transparent,
           child: InkWell(
-            onTap: () {},    //correction
+            onTap: onPressed,    //correction
             child: Padding(
               padding: const EdgeInsets.all(20.0),
               child: Column(

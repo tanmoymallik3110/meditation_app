@@ -21,18 +21,18 @@ class BottomNavBar extends StatelessWidget {
           BottomNavItem(
             title: "Today",
             svgSrc: "assets/icons/calendar.svg",
-            press: () {},
+            onPressed: () {},
           ),
           BottomNavItem(
             title: "All Exercises",
             svgSrc: "assets/icons/gym.svg",
-            press: () {},
+            onPressed: () {},
             isActive: true,
           ),
           BottomNavItem(
             title: "Settings",
             svgSrc: "assets/icons/Settings.svg",
-            press: () {},
+            onPressed: () {},
           ),
         ],
       ),
@@ -44,21 +44,21 @@ class BottomNavItem extends StatelessWidget {
   
   final String svgSrc;
   final String title;
-  final Function press;
+  final VoidCallback onPressed;
   final bool isActive;
 
   const BottomNavItem({
     super.key, 
     required this.svgSrc, 
     required this.title, 
-    required this.press, 
+    required this.onPressed, 
     this.isActive = false,
   });
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},    //correction
+      onTap: onPressed,    //correction
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
