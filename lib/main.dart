@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: kBackgroundColor,
         textTheme: Theme.of(context).textTheme.apply(displayColor: kTextColor),
       ),
-      home: HomeScreen(),
+      home: const HomeScreen(),
     );
   }
 }
@@ -37,12 +37,12 @@ class HomeScreen extends StatelessWidget {
     var size = MediaQuery.of(context).size;
 
     return Scaffold(
-      bottomNavigationBar: BottomNavBar(),
+      bottomNavigationBar: const BottomNavBar(),
       body: Stack(
         children: [
           Container(
             height: size.height * 0.45,
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               color: Color(0xFFF5CEB8),
               image: DecorationImage(
                 alignment: Alignment.centerLeft,
@@ -62,7 +62,7 @@ class HomeScreen extends StatelessWidget {
                       alignment: Alignment.center,
                       height: 52,
                       width: 52,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         color: Color(0xFFF2BEA1),
                         shape: BoxShape.circle,
                       ),
@@ -76,7 +76,7 @@ class HomeScreen extends StatelessWidget {
                     .headlineLarge
                     ?.copyWith(fontWeight: FontWeight.w900),
                   ),
-                  SearchBar(),
+                  const SearchBar(),
                   Expanded(
                     child: GridView.count(
                       crossAxisCount: 2,
@@ -102,7 +102,7 @@ class HomeScreen extends StatelessWidget {
                             context, 
                             MaterialPageRoute(
                               builder: (context) {
-                                return DetailsScreen();
+                                return const DetailsScreen();
                               },
                               ),
                             );
@@ -134,8 +134,8 @@ class SearchBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 30),
-      padding: EdgeInsets.symmetric(horizontal: 30, vertical: 5),
+      margin: const EdgeInsets.symmetric(vertical: 30),
+      padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 5),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(29.5),
